@@ -84,39 +84,39 @@ export default forwardRef<MusicDownloadModalType, MusicDownloadModalProps>(({ on
       qualityMap[element.type] = temp;
     }
     setPlayQualityList(Object.values(qualityMap));
-    if (Object.values(qualityMap).length == map.size) {
-      return;
-    }
-    getOtherSource(selectedInfo.current, true).then(res => {
-      if (res.length == 0) {
-        setPlayQualityList(Object.values(qualityMap));
-        return;
-      }
-      for (let index = 0; index < res.length; index++) {
-        const element = res[index];
-        let qualitys = element.meta.qualitys
-        for (let index = 0; index < qualitys.length; index++) {
-          const element = qualitys[index];
-          if (element.type in qualityMap) {
-            continue;
-          }
-          const tem: MusicOption = {
-            id: element.type,
-            name: map.has(element.type) ? map.get(element.type) : "未知",
-            size: element.size,
-            key: element.type,
-          }
-          qualityMap[element.type] = tem;
-          if (Object.values(qualityMap).length == map.size) {
-            setPlayQualityList(Object.values(qualityMap));
-            return;
-          }
-        }
-      }
+    // if (Object.values(qualityMap).length == map.size) {
+    //   return;
+    // }
+    // getOtherSource(selectedInfo.current, true).then(res => {
+    //   if (res.length == 0) {
+    //     setPlayQualityList(Object.values(qualityMap));
+    //     return;
+    //   }
+    //   for (let index = 0; index < res.length; index++) {
+    //     const element = res[index];
+    //     let qualitys = element.meta.qualitys
+    //     for (let index = 0; index < qualitys.length; index++) {
+    //       const element = qualitys[index];
+    //       if (element.type in qualityMap) {
+    //         continue;
+    //       }
+    //       const tem: MusicOption = {
+    //         id: element.type,
+    //         name: map.has(element.type) ? map.get(element.type) : "未知",
+    //         size: element.size,
+    //         key: element.type,
+    //       }
+    //       qualityMap[element.type] = tem;
+    //       if (Object.values(qualityMap).length == map.size) {
+    //         setPlayQualityList(Object.values(qualityMap));
+    //         return;
+    //       }
+    //     }
+    //   }
 
-    }).catch(err => {
+    // }).catch(err => {
 
-    })
+    // })
   }
 
   const handleShow = () => {
