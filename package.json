@@ -1,5 +1,5 @@
 {
-  "name": "lx-music-mobile",
+  "name": "lx-music-mobile-mod",
   "version": "1.5.0-beta.3",
   "versionCode": 67,
   "private": true,
@@ -28,21 +28,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lyswhut/lx-music-mobile.git"
+    "url": "git+https://github.com/ikunshare/lx-music-mobile-mod.git"
   },
   "keywords": [
     "music-player",
     "react-native-app"
   ],
   "author": {
-    "name": "lyswhut",
-    "email": "lyswhut@qq.com"
+    "name": "ikun0014",
+    "email": "ikun0014@qq.com"
   },
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/lyswhut/lx-music-mobile/issues"
+    "url": "https://github.com/ikunshare/lx-music-mobile-mod/issues"
   },
-  "homepage": "https://github.com/lyswhut/lx-music-mobile#readme",
+  "homepage": "https://github.com/ikunshare/lx-music-mobile-mod#readme",
   "dependencies": {
     "@craftzdog/react-native-buffer": "^6.0.5",
     "@react-native-async-storage/async-storage": "^1.24.0",

@@ -16,7 +16,7 @@ const Content = () => {
   const theme = useTheme()
 
   const openHomePage = () => {
-    void openUrl('https://github.com/lyswhut/lx-music-mobile#readme')
+    void openUrl('https://github.com/ikunshare/lx-music-mobile#readme')
   }
   const openLicensePage = () => {
     void openUrl('http://www.apache.org/licenses/LICENSE-2.0')
@@ -33,6 +33,8 @@ const Content = () => {
     <View style={styles.main}>
       <Text style={styles.title} size={18} >许可协议</Text>
       <ScrollView style={styles.content} keyboardShouldPersistTaps={'always'}>
+        <Text selectable style={styles.text} >** 此版本非洛雪音乐助手LX Music官方发布，请勿在官方的Github Issue询问问题 **</Text>
+
         <Text selectable style={styles.text} >本项目（软件）基于 <Text onPress={openLicensePage} style={textLinkStyle}>Apache License 2.0</Text> 许可证发行，在使用本软件前，你（使用者）需签署本协议才可继续使用，以下协议是对于 Apache License 2.0 的补充，如有冲突，以以下协议为准。{'\n'}</Text>
         <Text selectable style={styles.text} >词语约定：本协议中的“本软件”指洛雪音乐移动版项目；“使用者”指签署本协议的使用者；“官方音乐平台”指对本软件内置的包括酷我、酷狗、咪咕等音乐源的官方平台统称；“版权数据”指包括但不限于图像、音频、名字等在内的他人拥有所属版权的数据。{'\n'}</Text>
         <Text selectable style={styles.bold} >一、数据来源</Text>
