@@ -10,6 +10,7 @@
   <!-- <a href="https://github.com/lyswhut/lx-music-mobile/blob/master/LICENSE"><img src="https://img.shields.io/github/license/lyswhut/lx-music-mobile" alt="License"></a> -->
 </p>
 
+1
 
 <h2 align="center">洛雪音乐助手移动版</h2>
 
