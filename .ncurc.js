@@ -1,6 +1,7 @@
 module.exports = {
   upgrade: true,
   reject: [
+    'react-native-navigation',
     '@types/react-native',
     'message2call',
     'react',
@@ -8,11 +9,6 @@ module.exports = {
     'react-native-pager-view',
     'react-native-navigation',
   ],
-
-  // target: 'newest',
-  // filter: [
-  //   'react-native-navigation',
-  // ],
 
   // target: 'patch',
   // filter: [
