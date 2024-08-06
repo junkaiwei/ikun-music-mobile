@@ -1,6 +1,6 @@
 {
   "name": "lx-music-mobile-mod",
-  "version": "1.5.0-beta.3",
+  "version": "3.3.5",
   "versionCode": 67,
   "private": true,
   "scripts": {
@@ -71,7 +71,7 @@
     "@babel/core": "^7.25.2",
     "@babel/eslint-parser": "^7.25.1",
     "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
-    "@babel/preset-env": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
     "@babel/runtime": "^7.25.0",
     "@react-native/babel-preset": "^0.74.86",
     "@react-native/metro-config": "^0.74.86",
