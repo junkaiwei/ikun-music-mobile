@@ -10,8 +10,9 @@ import playerState from '@/store/player/state'
 import RNFetchBlob from 'rn-fetch-blob'
 import type { SelectInfo } from './ListMenu'
 import { type Metadata } from '@/components/MetadataEditModal'
-import musicSdk from '@/utils/musicSdk'
-import { getListMusicSync } from '@/utils/listManage'
+import { getMusicUrl } from '@/core/music'
+import log from '@/plugins/sync/log'
+import { setStatusText } from '@/core/player/playStatus'
 
 export const handlePlay = (listId: SelectInfo['listId'], index: SelectInfo['index']) => {
   void playList(listId, index)
@@ -166,29 +167,4 @@ export const handleDislikeMusic = async (musicInfo: SelectInfo['musicInfo']) => 
   if (hasDislike(playerState.playMusicInfo.musicInfo)) {
     void playNext(true)
   }
-}
-
-
-export const handleToggleSource = (listId: string, musicInfo: LX.Music.MusicInfo, toggleMusicInfo?: LX.Music.MusicInfoOnline | null) => {
-  const list = getListMusicSync(listId)
-  const idx = list.findIndex(m => m.id == musicInfo.id)
-  if (idx < 0) return null
-  musicInfo.meta.toggleMusicInfo = toggleMusicInfo
-  const newInfo = {
-    ...musicInfo,
-    meta: {
-      ...musicInfo.meta,
-      toggleMusicInfo,
-    },
-  }
-  void updateListMusics([
-    {
-      id: listId,
-      musicInfo: newInfo as LX.Music.MusicInfo,
-    },
-  ])
-  if (!!toggleMusicInfo || (playerState.playMusicInfo.listId == listId && playerState.playMusicInfo.musicInfo?.id == musicInfo.id)) {
-    void playList(listId, idx)
-  }
-  return newInfo as LX.Music.MusicInfo
 }
