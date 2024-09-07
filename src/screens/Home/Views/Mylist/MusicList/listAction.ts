@@ -55,7 +55,7 @@ export const handelDownload = (musicInfo: any, quality: LX.Quality) => {
         console.log(url);
         const extension = getFileExtension(url);
         const fileName = musicInfo.name;
-        const downloadDir = RNFetchBlob.fs.dirs.DownloadDir + "/lxmusicmod";
+        const downloadDir = RNFetchBlob.fs.dirs.DownloadDir + "/lx.music";
         const path = `${downloadDir}/${fileName}.${extension}`
         const config = {
           fileCache: true,
@@ -84,8 +84,6 @@ export const handelDownload = (musicInfo: any, quality: LX.Quality) => {
   }).catch((e) => {
     return Promise.reject(e ?? "权限获取失败")
   })
-
-
 }
 
 export const handleRemove = (listId: SelectInfo['listId'], musicInfo: SelectInfo['musicInfo'], selectedList: SelectInfo['selectedList'], onCancelSelect: () => void) => {
