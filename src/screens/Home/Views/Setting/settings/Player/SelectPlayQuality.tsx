@@ -35,6 +35,11 @@ export default memo(() => {
         id: "flac24bit",
         key: "flac24bit",
         name: "Hi-Res音质"
+      },
+      {
+        id: "master",
+        key: "master",
+        name: "臻品母带"
       }
     ]);
   }, [])

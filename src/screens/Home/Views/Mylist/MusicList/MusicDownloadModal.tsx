@@ -70,6 +70,7 @@ export default forwardRef<MusicDownloadModalType, MusicDownloadModalProps>(({ on
     map.set("320k", "高品音质");
     map.set("flac", "无损音质");
     map.set("flac24bit", "Hi-Res音质");
+    map.set("master", "臻品母带");
     const qualitys = selectedInfo.current.meta.qualitys;
 
     let qualityMap: QualityMap = {};

@@ -56,7 +56,7 @@ export const handelDownload = (musicInfo: any, quality: LX.Quality) => {
         console.log(url);
         const extension = getFileExtension(url);
         const fileName = musicInfo.name;
-        const downloadDir = RNFetchBlob.fs.dirs.DownloadDir + "/lx.music";
+        const downloadDir = RNFetchBlob.fs.dirs.DownloadDir + "/lxmusicmod";
         const path = `${downloadDir}/${fileName}.${extension}`
         const config = {
           fileCache: true,
