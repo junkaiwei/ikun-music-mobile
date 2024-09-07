@@ -21,6 +21,8 @@ export interface ListMenuProps {
   onEditMetadata: (selectInfo: SelectInfo) => void
   onCopyName: (selectInfo: SelectInfo) => void
   onChangePosition: (selectInfo: SelectInfo) => void
+  onToggleSource: (selectInfo: SelectInfo) => void
+  onMusicSourceDetail: (selectInfo: SelectInfo) => void
   onDislikeMusic: (selectInfo: SelectInfo) => void
   onRemove: (selectInfo: SelectInfo) => void
   onDownload: (selectInfo: SelectInfo) => void
@@ -66,6 +68,8 @@ export default forwardRef<ListMenuType, ListMenuProps>((props, ref) => {
       { action: 'download', label: '下载' },
       { action: 'add', label: t('add_to') },
       { action: 'move', label: t('move_to') },
+      { action: 'changePosition', label: t('change_position') },
+      { action: 'toggleSource', label: t('toggle_source') },
       { action: 'copyName', label: t('copy_name') },
       { action: 'changePosition', label: t('change_position') },
       { action: 'dislike', disabled: hasDislike(musicInfo), label: t('dislike') },
@@ -131,6 +135,14 @@ export default forwardRef<ListMenuType, ListMenuProps>((props, ref) => {
         break
       case 'changePosition':
         props.onChangePosition(selectInfo)
+        // setVIsibleMusicPosition(true)
+        break
+      case 'toggleSource':
+        props.onToggleSource(selectInfo)
+        // setVIsibleMusicPosition(true)
+        break
+      case 'musicSourceDetail':
+        props.onMusicSourceDetail(selectInfo)
         // setVIsibleMusicPosition(true)
         break
       case 'dislike':
