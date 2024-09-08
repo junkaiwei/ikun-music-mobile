@@ -6,8 +6,8 @@ const sources: Array<{
   disabled: boolean
   supportQualitys: Partial<Record<LX.OnlineSource, LX.Quality[]>>
 }> = [
-   {
-    id: 'ikun',
+  {
+    id: 'ikun_zj',
     name: 'ikun公益音源',
     disabled: false,
     supportQualitys: {
@@ -19,15 +19,13 @@ const sources: Array<{
     },
   },
   {
-    id: 'ikun-us',
+    id: 'ikun_cf',
     name: 'ikun公益音源（美国Cloudflare节点）',
     disabled: false,
     supportQualitys: {
-      kw: ['128k', '320k', 'flac', 'flac24bit', 'master'],
       kg: ['128k', '320k', 'flac', 'flac24bit', 'master'],
       tx: ['128k', '320k', 'flac', 'flac24bit', 'master'],
       wy: ['128k', '320k', 'flac', 'flac24bit', 'master'],
-      mg: ['128k', '320k', 'flac', 'flac24bit', 'master'],
     },
   },
 ]

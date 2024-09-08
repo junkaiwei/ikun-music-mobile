@@ -138,8 +138,8 @@ export default {
           size,
         }
       }
-      if (file.size_new[0] !== 0) {
-        let size = sizeFormate(file.size_new[0])
+      if (item.file.size_new[0] !== 0) {
+        let size = sizeFormate(item.file.size_new[0])
         types.push({ type: 'master', size })
         _types.master = {
           size,
