@@ -18,6 +18,18 @@ const sources: Array<{
       mg: ['128k', '320k', 'flac', 'flac24bit', 'master'],
     },
   },
+  {
+    id: 'ikun-us',
+    name: 'ikun公益音源（美国Cloudflare节点）',
+    disabled: false,
+    supportQualitys: {
+      kw: ['128k', '320k', 'flac', 'flac24bit', 'master'],
+      kg: ['128k', '320k', 'flac', 'flac24bit', 'master'],
+      tx: ['128k', '320k', 'flac', 'flac24bit', 'master'],
+      wy: ['128k', '320k', 'flac', 'flac24bit', 'master'],
+      mg: ['128k', '320k', 'flac', 'flac24bit', 'master'],
+    },
+  },
 ]
 
 export default sources

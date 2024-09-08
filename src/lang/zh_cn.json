@@ -274,6 +274,7 @@
   "setting_basic_source_status_initing": "初始化中",
   "setting_basic_source_status_success": "初始化成功",
   "setting_basic_source_ikun": "ikun公益音源（几乎软件的所有功能都可用）",
+  "setting_basic_source_ikun_us": "ikun公益音源（美国Cloudflare节点）",
   "setting_basic_source_title": "选择音乐来源",
   "setting_basic_source_user_api_btn": "自定义源管理",
   "setting_basic_sourcename": "音源名字",
