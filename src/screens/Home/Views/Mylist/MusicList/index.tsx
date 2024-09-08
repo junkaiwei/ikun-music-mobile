@@ -15,6 +15,7 @@ import ListMusicSearch, { type ListMusicSearchType } from './ListMusicSearch'
 import MusicPositionModal, { type MusicPositionModalType } from './MusicPositionModal'
 import MusicDownloadModal, { type MusicDownloadModalType } from './MusicDownloadModal'
 import MetadataEditModal, { type MetadataEditType, type MetadataEditProps } from '@/components/MetadataEditModal'
+import MusicToggleModal, { type MusicToggleModalType } from './MusicToggleModal'
 
 
 export default () => {
@@ -30,6 +31,7 @@ export default () => {
   const musicDownloadModalRef = useRef<MusicDownloadModalType>(null)
   const metadataEditTypeRef = useRef<MetadataEditType>(null)
   const listMenuRef = useRef<ListMenuType>(null)
+  const musicToggleModalRef = useRef<MusicToggleModalType>(null)
   const layoutHeightRef = useRef<number>(0)
   const isShowMultipleModeBar = useRef(false)
   const isShowSearchBarModeBar = useRef(false)
@@ -165,11 +167,13 @@ export default () => {
         onMove={handleMoveMusic}
         onEditMetadata={handleEditMetadata}
         onChangePosition={info => musicPositionModalRef.current?.show(info)}
+        onToggleSource={info => musicToggleModalRef.current?.show(info)}
       />
       <MetadataEditModal
         ref={metadataEditTypeRef}
         onUpdate={handleUpdateMetadata}
       />
+      <MusicToggleModal ref={musicToggleModalRef} />
     </View>
   )
 }

@@ -549,7 +549,7 @@ export const cheatTip = async() => {
     title: '提示',
     message: `本项目是对LX Music的二次开发，请勿将本项目用于商业用途，否则后果自负。如有疑问，请加入QQ群：690309707。`,
     btnText: '我知道了 (Close)',
-    bgClose: false,
+    bgClose: true,
   }).then(() => {
     void saveData(storageDataPrefix.cheatTip, true)
   })
