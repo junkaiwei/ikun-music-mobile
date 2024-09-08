@@ -10,8 +10,9 @@ import playerState from '@/store/player/state'
 import RNFetchBlob from 'rn-fetch-blob'
 import type { SelectInfo } from './ListMenu'
 import { type Metadata } from '@/components/MetadataEditModal'
-import musicSdk from '@/utils/musicSdk'
 import { getListMusicSync } from '@/utils/listManage'
+import { setStatusText } from '@/core/player/playStatus'
+import { getMusicUrl } from '@/core/music/index'
 
 export const handlePlay = (listId: SelectInfo['listId'], index: SelectInfo['index']) => {
   void playList(listId, index)

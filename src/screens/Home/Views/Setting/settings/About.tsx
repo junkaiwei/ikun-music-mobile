@@ -11,9 +11,9 @@ import { useI18n } from '@/lang'
 import Text from '@/components/common/Text'
 import { showPactModal } from '@/core/common'
 
-const qqGroupUrl = 'mqqopensdkapi://bizAgent/qm/qr?url=http%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Ffrom%3Dapp%26p%3Dandroid%26jump_from%3Dwebapi%26k%3D14NOEp349EcTVThmPTk-Eo5VyCU0aWK9'
+const qqGroupUrl = 'mqqopensdkapi://bizAgent/qm/qr?url=http%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Ffrom%3Dapp%26p%3Dandroid%26jump_from%3Dwebapi%26k%3DKLw6B7FXiIUUEBK9Tk22BxJ-82T3Inm8'
 
-const qqGroupWebUrl = 'https://qm.qq.com/q/5D1prW18n6'
+const qqGroupWebUrl = 'https://qm.qq.com/q/t4toQFR7mE'
 
 export default memo(() => {
   const theme = useTheme()
@@ -65,7 +65,7 @@ export default memo(() => {
       <View style={styles.part}>
         <Text style={styles.text}><Text style={styles.boldText}>本软件没有客服</Text>，但我们整理了一些常见的使用问题，<Text style={styles.boldText} >仔细 仔细 仔细 </Text>地阅读常见问题后，</Text>
         <Text style={styles.text}>仍有问题可加企鹅群 </Text>
-        <TouchableOpacity onPress={goToQQGroup}><Text style={textLinkStyle}>690309707</Text></TouchableOpacity>
+        <TouchableOpacity onPress={goToQQGroup}><Text style={textLinkStyle}>849514974</Text></TouchableOpacity>
         <Text style={styles.text}> 反馈。</Text>
         <Text style={styles.text}>注意：<Text style={styles.boldText}>为了群主+管理的寿命，入群先看群公告</Text></Text>
       </View>
