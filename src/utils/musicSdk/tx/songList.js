@@ -12,12 +12,10 @@ export default {
   sortList: [
     {
       name: '最热',
-      tid: 'hot',
       id: 5,
     },
     {
       name: '最新',
-      tid: 'new',
       id: 2,
     },
   ],
@@ -173,10 +171,10 @@ export default {
     if (retryNum > 2) return Promise.reject(new Error('link try max num'))
 
     const requestObj_listDetailLink = httpFetch(link)
-    const { url, statusCode } = await requestObj_listDetailLink.promise
+    const { headers: { location }, statusCode } = await requestObj_listDetailLink.promise
     // console.log(headers)
     if (statusCode > 400) return this.handleParseId(link, ++retryNum)
-    return url
+    return location == null ? link : location
   },
 
   async getListId(id) {
@@ -255,13 +253,6 @@ export default {
         let size = sizeFormate(item.file.size_hires)
         types.push({ type: 'flac24bit', size })
         _types.flac24bit = {
-          size,
-        }
-      }
-      if (file.size_new[0] !== 0) {
-        let size = sizeFormate(file.size_new[0])
-        types.push({ type: 'master', size })
-        _types.master = {
           size,
         }
       }
