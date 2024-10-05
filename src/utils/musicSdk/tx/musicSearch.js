@@ -25,12 +25,12 @@ export default {
           os_ver: '12',
           phonetype: '0',
           devicelevel: '31',
-          tmeAppID: 'qqmusiclight',
+          tmeAppID: 'qqmusic',
           nettype: 'NETWORK_WIFI',
         },
         req: {
           module: 'music.search.SearchCgiService',
-          method: 'DoSearchForQQMusicLite',
+          method: 'DoSearchForQQMusicDesktop',
           param: {
             query: str,
             search_type: 0,
