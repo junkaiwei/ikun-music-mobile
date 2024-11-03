@@ -17,7 +17,7 @@ const Content = () => {
   const theme = useTheme()
 
   const openHomePage = () => {
-    void openUrl('https://github.com/ikunshare/lx-music-mobile-mod#readme')
+    void openUrl('https://github.com/ikunshare/ikun-music-mobile#readme')
   }
   const openLicensePage = () => {
     void openUrl('http://www.apache.org/licenses/LICENSE-2.0')

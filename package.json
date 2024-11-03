@@ -1,5 +1,5 @@
 {
-  "name": "lx-music-mobile-mod",
+  "name": "ikun-music-mobile",
   "version": "3.4.8",
   "versionCode": 69,
   "private": true,
@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ikunshare/lx-music-mobile-mod.git"
+    "url": "git+https://github.com/ikunshare/ikun-music-mobile.git"
   },
   "keywords": [
     "music-player",
@@ -40,9 +40,9 @@
   },
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ikunshare/lx-music-mobile-mod/issues"
+    "url": "https://github.com/ikunshare/ikun-music-mobile/issues"
   },
-  "homepage": "https://github.com/ikunshare/lx-music-mobile-mod#readme",
+  "homepage": "https://github.com/ikunshare/ikun-music-mobile#readme",
   "dependencies": {
     "@craftzdog/react-native-buffer": "^6.0.5",
     "@react-native-async-storage/async-storage": "^2.0.0",
