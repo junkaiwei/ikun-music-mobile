@@ -4,10 +4,9 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
+
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.WritableMap;
-
-import java.util.Objects;
 
 public class JsHandler extends Handler {
   private final UtilsEvent utilsEvent;

@@ -1,15 +1,15 @@
 package com.ikunshare.music.mobile.cache;
 
+import static com.ikunshare.music.mobile.cache.Utils.clearCacheFolder;
+import static com.ikunshare.music.mobile.cache.Utils.getDirSize;
+import static com.ikunshare.music.mobile.cache.Utils.isMethodsCompat;
+
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 
 import java.io.File;
-
-import static com.ikunshare.music.mobile.cache.Utils.clearCacheFolder;
-import static com.ikunshare.music.mobile.cache.Utils.getDirSize;
-import static com.ikunshare.music.mobile.cache.Utils.isMethodsCompat;
 
 // https://github.com/midas-gufei/react-native-clear-app-cache/tree/master/android/src/main/java/com/learnta/clear
 public class CacheModule extends ReactContextBaseJavaModule {

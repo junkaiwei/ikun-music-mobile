@@ -5,19 +5,18 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Base64;
 import android.util.Log;
+
+import com.facebook.react.bridge.ReactApplicationContext;
 import com.ikunshare.music.mobile.crypto.AES;
 import com.ikunshare.music.mobile.crypto.RSA;
-import com.facebook.react.bridge.ReactApplicationContext;
-
 import com.whl.quickjs.android.QuickJSLoader;
-import com.whl.quickjs.wrapper.JSCallFunction;
 import com.whl.quickjs.wrapper.QuickJSContext;
+
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.UUID;
-import okhttp3.HttpUrl;
 
 public class QuickJS {
   private final Handler eventHandler;

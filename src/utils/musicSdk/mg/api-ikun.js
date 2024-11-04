@@ -5,7 +5,7 @@ import { dnsLookup } from '../utils'
 
 const api_ikun_zj = {
   getMusicUrl(songInfo, type) {
-    const requestObj = httpFetch(`https://lxmusic.ikunshare.com/url/mg/${songInfo.copyrightId}/${type}`, {
+    const requestObj = httpFetch(`https://音源.ikunshare.com/url/mg/${songInfo.copyrightId}/${type}`, {
       method: 'get',
       timeout,
       headers,

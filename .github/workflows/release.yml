@@ -21,7 +21,7 @@ jobs:
         run: |
           cd android
           chmod +x ./gradlew
-          ./gradlew assembleRelease -PMYAPP_UPLOAD_STORE_FILE=${{ secrets.KEY_FILE }} -PMYAPP_UPLOAD_KEY_ALIAS=${{ secrets.KEY_ALIAS }}' -PMYAPP_UPLOAD_STORE_PASSWORD=${{ secrets.ALIAS_PASSWORD }} -PMYAPP_UPLOAD_KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}
+          ./gradlew assembleRelease -PMYAPP_UPLOAD_STORE_FILE='${{ secrets.KEY_FILE }}' -PMYAPP_UPLOAD_KEY_ALIAS='${{ secrets.KEY_ALIAS }}' -PMYAPP_UPLOAD_STORE_PASSWORD='${{ secrets.ALIAS_PASSWORD }}' -PMYAPP_UPLOAD_KEY_PASSWORD='${{ secrets.KEY_PASSWORD }}'
 
       # Push tag to GitHub if package.json version's tag is not tagged
       - name: Get package version

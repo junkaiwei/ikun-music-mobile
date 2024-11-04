@@ -27,7 +27,7 @@ const Item = ({ id, name }: {
 export default memo(() => {
   const t = useI18n()
   const playQualityList = useMemo(() => {
-    return [...TRY_QUALITYS_LIST, '128k'].reverse() as LX.Quality[]
+    return [...TRY_QUALITYS_LIST].reverse() as LX.Quality[]
   }, [])
 
   return (
@@ -47,26 +47,3 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
 })
-
-
-// export default memo(() => {
-//   const t = useI18n()
-//   const isPlayHighQuality = useSettingValue('player.isPlayHighQuality')
-//   const setPlayHighQuality = (isPlayHighQuality: boolean) => {
-//     updateSetting({ 'player.isPlayHighQuality': isPlayHighQuality })
-//   }
-
-//   return (
-//     <View style={styles.content}>
-//       <CheckBoxItem check={isPlayHighQuality} onChange={setPlayHighQuality} label={t('setting_play_quality')} />
-//     </View>
-//   )
-// })
-
-
-// const styles = createStyle({
-//   content: {
-//     marginTop: 5,
-//   },
-// })
-

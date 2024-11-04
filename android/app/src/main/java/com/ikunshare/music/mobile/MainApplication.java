@@ -1,19 +1,19 @@
 package com.ikunshare.music.mobile;
 
 import com.facebook.react.PackageList;
-import com.facebook.react.flipper.ReactNativeFlipper;
-import com.reactnativenavigation.NavigationApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
-import com.reactnativenavigation.react.NavigationReactNativeHost;
-import java.util.List;
-
+import com.facebook.react.flipper.ReactNativeFlipper;
 import com.ikunshare.music.mobile.cache.CachePackage;
 import com.ikunshare.music.mobile.crypto.CryptoPackage;
 import com.ikunshare.music.mobile.lyric.LyricPackage;
 import com.ikunshare.music.mobile.userApi.UserApiPackage;
 import com.ikunshare.music.mobile.utils.UtilsPackage;
+import com.reactnativenavigation.NavigationApplication;
+import com.reactnativenavigation.react.NavigationReactNativeHost;
+
+import java.util.List;
 
 public class MainApplication extends NavigationApplication {
 

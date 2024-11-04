@@ -2,7 +2,6 @@ package com.ikunshare.music.mobile.lyric;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.text.TextUtils;

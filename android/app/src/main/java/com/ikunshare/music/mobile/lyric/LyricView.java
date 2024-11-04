@@ -21,12 +21,11 @@ import android.view.WindowManager;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.WritableMap;
+import com.ikunshare.music.mobile.R;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import com.ikunshare.music.mobile.R;
 
 public class LyricView extends Activity implements View.OnTouchListener {
   LyricSwitchView textView = null;
