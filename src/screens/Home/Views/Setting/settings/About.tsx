@@ -19,6 +19,9 @@ export default memo(() => {
   const openHomePage = () => {
     void openUrl('https://github.com/ikunshare/ikun-music-mobile#readme')
   }
+  const openIssuePage = () => {
+    void openUrl('https://github.com/lyswhut/lx-music-mobile/issues')
+  }
   const openNetdiskPage = () => {
     void openUrl('https://www.lanzoui.com/s/LXMusic')
   }
@@ -49,7 +52,7 @@ export default memo(() => {
         </TouchableOpacity>
       </View>
       <View style={styles.part}>
-        <Text style={styles.text} >最新版网盘下载地址：</Text>
+        <Text style={styles.text}>最新版网盘下载地址：</Text>
         <TouchableOpacity onPress={openNetdiskPage}>
           <Text style={textLinkStyle}>网盘地址（密码：LXMusicMod）</Text>
         </TouchableOpacity>
