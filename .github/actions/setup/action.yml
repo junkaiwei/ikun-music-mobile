@@ -33,4 +33,6 @@ runs:
 
     - name: Install dependencies
       shell: bash
-      run: npm ci
+      run: |
+        npm ci
+        npm i react-native-vector-icons
