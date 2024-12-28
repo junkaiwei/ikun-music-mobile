@@ -1,6 +1,6 @@
 import { weapi, linuxapi } from './utils/crypto'
 import { httpFetch } from '../../request'
-import { formatPlayTime, dateFormat, formatPlayCount } from '../../index'
+import { formatPlayTime, sizeFormate, dateFormat, formatPlayCount } from '../../index'
 import musicDetailApi from './musicDetail'
 import { eapiRequest } from './utils/index'
 import { formatSingerName } from '../utils'
@@ -16,6 +16,7 @@ export default {
   sortList: [
     {
       name: '最热',
+      tid: 'hot',
       id: 'hot',
     },
   ],
@@ -28,9 +29,9 @@ export default {
     if (retryNum > 2) throw new Error('link try max num')
 
     const requestObj_listDetailLink = httpFetch(link)
-    const { headers: { location }, statusCode } = await requestObj_listDetailLink.promise
+    const { url, statusCode } = await requestObj_listDetailLink.promise
+    // console.log(headers)
     if (statusCode > 400) return this.handleParseId(link, ++retryNum)
-    const url = location == null ? link : location
     return this.regExps.listDetailLink.test(url)
       ? url.replace(this.regExps.listDetailLink, '$1')
       : url.replace(this.regExps.listDetailLink2, '$1')
@@ -66,6 +67,8 @@ export default {
         'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
         Cookie: this.cookie,
       },
+      credentials: 'omit',
+      cache: 'default',
       form: linuxapi({
         method: 'POST',
         url: 'https://music.163.com/api/v3/playlist/detail',
@@ -112,9 +115,44 @@ export default {
   },
   filterListDetail({ playlist: { tracks } }) {
     const list = []
-    tracks.forEach((item) => {
+    tracks.forEach((item, index) => {
       const types = []
       const _types = {}
+      let size
+      let privilege = privileges[index]
+      if (privilege.id !== item.id) privilege = privileges.find(p => p.id === item.id)
+      if (!privilege) return
+
+      if (privilege.maxBrLevel == 'hires') {
+        size = item.hr ? sizeFormate(item.hr.size) : null
+        types.push({ type: 'flac24bit', size })
+        _types.flac24bit = {
+          size,
+        }
+      }
+      switch (privilege.maxbr) {
+        case 999000:
+          size = null
+          types.push({ type: 'flac', size })
+          _types.flac = {
+            size,
+          }
+        case 320000:
+          size = item.h ? sizeFormate(item.h.size) : null
+          types.push({ type: '320k', size })
+          _types['320k'] = {
+            size,
+          }
+        case 192000:
+        case 128000:
+          size = item.l ? sizeFormate(item.l.size) : null
+          types.push({ type: '128k', size })
+          _types['128k'] = {
+            size,
+          }
+      }
+
+      types.reverse()
 
       if (item.pc) {
         list.push({

@@ -2,14 +2,15 @@ import { removeListMusics, updateListMusicPosition, updateListMusics } from '@/c
 import { playList, playNext } from '@/core/player/player'
 import { addTempPlayList } from '@/core/player/tempPlayList'
 import settingState from '@/store/setting/state'
-import { similar, sortInsert } from '@/utils'
-import { confirmDialog, requestStoragePermission, shareMusic, toast } from '@/utils/tools'
+import { similar, sortInsert, toOldMusicInfo } from '@/utils'
+import { confirmDialog, openUrl,requestStoragePermission, shareMusic, toast } from '@/utils/tools'
 import { addDislikeInfo, hasDislike } from '@/core/dislikeList'
 import playerState from '@/store/player/state'
 
 import RNFetchBlob from 'rn-fetch-blob'
 import type { SelectInfo } from './ListMenu'
 import { type Metadata } from '@/components/MetadataEditModal'
+import musicSdk from '@/utils/musicSdk'
 import { getListMusicSync } from '@/utils/listManage'
 import { setStatusText } from '@/core/player/playStatus'
 import { getMusicUrl } from '@/core/music/index'
@@ -154,9 +155,16 @@ export const searchListMusic = (list: LX.Music.MusicInfo[], text: string) => {
   return sortedList.map(item => item.data).reverse()
 }
 
-export const handleDislikeMusic = async (musicInfo: SelectInfo['musicInfo']) => {
+export const handleShowMusicSourceDetail = async(minfo: SelectInfo['musicInfo']) => {
+  const url = musicSdk[minfo.source as LX.OnlineSource]?.getMusicDetailPageUrl(toOldMusicInfo(minfo))
+  if (!url) return
+  void openUrl(url)
+}
+
+
+export const handleDislikeMusic = async(musicInfo: SelectInfo['musicInfo']) => {
   const confirm = await confirmDialog({
-    message: global.i18n.t('lists_dislike_music_tip', { name: musicInfo.name }),
+    message: musicInfo.singer ? global.i18n.t('lists_dislike_music_singer_tip', { name: musicInfo.name, singer: musicInfo.singer }) : global.i18n.t('lists_dislike_music_tip', { name: musicInfo.name }),
     cancelButtonText: global.i18n.t('cancel_button_text_2'),
     confirmButtonText: global.i18n.t('confirm_button_text'),
     bgClose: false,

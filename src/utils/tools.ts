@@ -550,8 +550,10 @@ export const cheatTip = async() => {
   if (isRead) return
 
   return tipDialog({
-    title: '提示',
-    message: `本项目是对LX Music的二次开发，请勿将本项目用于商业用途，否则后果自负。如有疑问，请加入Telegram群组：@ikunshare_qun。`,
+    title: '谨防被骗提示',
+    message: `1. 本项目无微信公众号之类的所谓「官方账号」，也未在小米、华为、vivo 等应用商店发布应用，商店内的「LX Music」、「洛雪音乐」相关的应用全部属于假冒应用，谨防被骗！\n
+2. 本软件完全无广告且无引流（如需要加群、关注公众号之类才能使用或者升级）的行为，若你使用过程中遇到广告或者引流的信息，则表明你当前运行的软件是第三方修改版。\n
+3. 目前本项目的原始发布地址只有 GitHub，其他渠道均为第三方转载发布，可信度请自行鉴别。`,
     btnText: '我知道了 (Close)',
     bgClose: true,
   }).then(() => {

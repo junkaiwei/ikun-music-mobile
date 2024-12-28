@@ -27,7 +27,7 @@ const Item = ({ id, name }: {
 export default memo(() => {
   const t = useI18n()
   const playQualityList = useMemo(() => {
-    return [...TRY_QUALITYS_LIST].reverse() as LX.Quality[]
+    return [...TRY_QUALITYS_LIST, '128k'].reverse() as LX.Quality[]
   }, [])
 
   return (
