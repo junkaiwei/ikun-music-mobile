@@ -28,6 +28,9 @@ export default memo(() => {
   const openPactModal = () => {
     showPactModal()
   }
+  const openPartPage = () => {
+    void openUrl('https://github.com/lyswhut/lx-music-mobile#%E9%A1%B9%E7%9B%AE%E5%8D%8F%E8%AE%AE')
+  }
   const openFAQPage = () => {
     void openUrl('https://lyswhut.github.io/lx-music-doc/mobile/faq')
   }
