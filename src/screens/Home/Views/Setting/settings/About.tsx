@@ -1,15 +1,15 @@
-import {memo} from 'react'
-import {View, TouchableOpacity} from 'react-native'
+import React, { memo } from 'react'
+import { View, TouchableOpacity } from 'react-native'
 
 import Section from '../components/Section'
 // import Button from './components/Button'
 
-import {createStyle, openUrl} from '@/utils/tools'
+import { createStyle, openUrl } from '@/utils/tools'
 // import { showPactModal } from '@/navigation'
-import {useTheme} from '@/store/theme/hook'
-import {useI18n} from '@/lang'
+import { useTheme } from '@/store/theme/hook'
+import { useI18n } from '@/lang'
 import Text from '@/components/common/Text'
-import {showPactModal} from '@/core/common'
+import { showPactModal } from '@/core/common'
 
 const tgGroupUrl = 'https://t.me/ikunshare_qun'
 

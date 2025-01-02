@@ -7,7 +7,7 @@ const sources: Array<{
   supportQualitys: Partial<Record<LX.OnlineSource, LX.Quality[]>>
 }> = [
   {
-    id: 'ikun_zj',
+    id: 'ikun',
     name: 'ikun公益音源',
     disabled: false,
     supportQualitys: {
